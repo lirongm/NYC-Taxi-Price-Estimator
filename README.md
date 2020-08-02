@@ -257,4 +257,3 @@ nyctaxi app.py
 docker kill test
 docker rm test  
 ```
-# NYC-Taxi-Price-Estimator
