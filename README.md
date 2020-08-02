@@ -1,5 +1,5 @@
   
-# MSiA 423 Project Repository  
+# New York City Taxi Price Estimator Project Repository  
 Created by Lirong Ma, QA by Yanmeng (Selina) Song   
   
 <!-- toc -->  
@@ -7,6 +7,7 @@ Created by Lirong Ma, QA by Yanmeng (Selina) Song
 - [Backlog](#backlog)  
   
 - [Directory Structure](#directory-structure)  
+- [Download raw data from Kaggle](#download-raw-data-from-kaggle)
 - [Running the Model Training Pipeline](#running-the-model-training-pipeline)  
 	*   [Set up AWS credentials ](set-up-aws-credentials)  
 	*   [Configure artifact outputs ](configure-artifact-outputs)
@@ -156,7 +157,14 @@ The stories are assigned with points to represent the time estimation to complet
 ├── Makefile                          <- Makefile for running model pipeline  
 ├── requirements.txt                  <- Python package dependencies  
 ```  
- 
+
+## Download raw data from Kaggle 
+
+-  Please go to [https://www.kaggle.com/c/new-york-city-taxi-fare-prediction/data?select=train.csv](https://www.kaggle.com/c/new-york-city-taxi-fare-prediction/data?select=train.csv)
+-  To download the dataset, you have to sign up for a Kaggle account. If you have an account, please `sign in`. If you do not have one, please `register` and then sign in. 
+ - On the webpage, click `I understand and agree` and then `download` to download the dataset **train.csv**. *Note*: if you do not sign in, the webpage will indicate "an error occurred accepting the competition rules."
+- Rename **train.csv** as **raw_data.csv** and move it to NYC-Taxi-Price-Estimator/data.
+
 ## Running the Model Training Pipeline 
 
 ### Set up AWS credentials
