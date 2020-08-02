@@ -11,12 +11,12 @@ Created by Lirong Ma, QA by Yanmeng (Selina) Song
 - [Running the Model Training Pipeline](#running-the-model-training-pipeline)  
 	*   [Set up AWS credentials ](#set-up-aws-credentials)  
 	*   [Configure artifact outputs ](#configure-artifact-outputs)
-	*   [Build docker image ](#build-pipeline-docker-image)  
+	*   [Build docker image ](#build-docker-image-1)  
 	*   [Run the pipeline ](#run-the-pipeline)  
 	* 	[Run unit tests ](#run-unit-tests)  
 - [Running the App](#running-the-app)  
   * [Set up MySQL Credentials ](#set-up-mysql-credentials)  
-  * [Build docker image](#build-app-docker-image)  
+  * [Build docker image](#build-docker-image-2)  
   * [Run the app using RDS](#run-app-local-rds)  
   * [Run the app using a local database](#run-app-local-db)  
   
@@ -208,7 +208,7 @@ docker run project unit_tests
 ```
 ## Running the App
 
-### Build docker image
+### Build docker image 
 Please go to the root repository and build the docker image.
 ```bash
 docker build -f app/Dockerfile -t nyctaxi .
