@@ -11,11 +11,11 @@ Created by Lirong Ma, QA by Yanmeng (Selina) Song
 - [Running the Model Training Pipeline](#running-the-model-training-pipeline)  
 	*   [Set up AWS credentials ](#set-up-aws-credentials)  
 	*   [Configure artifact outputs ](#configure-artifact-outputs)
-	*   [Build docker image ](#build-docker-image-1)  
+	*   [Build docker image ](#build-docker-image)  
 	*   [Run the pipeline ](#run-the-pipeline)  
 	* 	[Run unit tests ](#run-unit-tests)  
 - [Running the App](#running-the-app)  
-  * [Build docker image](#build-docker-image-2)  
+  * [Build docker image](#build-docker-image-1)  
   * [Run the app using RDS](#run-the-app-using-rds)  
   * [Run the app using a local database](#run-the-app-using-a-local-database)  
   
