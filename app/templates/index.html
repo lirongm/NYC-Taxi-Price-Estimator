@@ -1,0 +1,122 @@
+{# html template obtained from https://www.w3schools.com/w3css/tryw3css_templates_apartment_rental.htm #}
+{# alert button template obtained from https://www.w3schools.com/howto/howto_js_alert.asp #}
+
+<!DOCTYPE html>
+<html>
+<title>NYC Taxi Price Estimator</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+.myLink {display: none}
+.alert {
+  padding: 20px;
+  background-color: darkorange;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+</style>
+<body class="w3-light-grey">
+
+<!-- Navigation Bar -->
+<!-- Header -->
+<header class="w3-display-container w3-content w3-hide-small" style="max-width:1900px">
+  <img class="w3-image" src="../static/background.jpg" alt="Background" width="1900" height="500">
+  <div class="w3-display-middle" style="width:50%">
+    <div class="w3-bar w3-black">
+      <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'NYC Taxi Price Estimator');"><i class="fa fa-taxi w3-margin-right"></i>NYC Taxi Price Estimator</button>
+      <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Instructions');"><i class="fa fa-map-o w3-margin-right"></i>Instructions</button>
+    </div>
+
+    <!-- Tabs -->
+    <!-- NYC Taxi Estimator Tab-->
+    <div id="NYC Taxi Price Estimator" class="w3-container w3-white w3-padding-16 myLink">
+      <div class="w3-row-padding" style="margin:0 -16px;">
+          <!-- Prediction box -->
+          <div class="alert">
+                <strong>Estimated Taxi Price</strong>
+               <p>{{result}}</p>
+          </div>
+
+          <!-- User input -->
+          <form action="{{ url_for('predict') }}" method=post class=predict>
+            <div class="w3-half">
+              <p><label><i class="fa fa-map-marker"></i> Pickup Location </label></p>
+              <input class="w3-input w3-border" type=text size=15 name=pickup_address required>
+            </div>
+            <div class="w3-half">
+              <p><label><i class="fa fa-map-marker"></i> Destination </label></p>
+              <input class="w3-input w3-border" type=text size=15 name=dropoff_address required>
+            </div>
+            <div class="w3-half">
+              <p><label><i class="fa fa-calendar-check-o"></i> Pickup Date</label></p>
+              <input class="w3-input w3-border" type="date" size=15 name=pickup_date placeholder="Pickup Date" required>
+            </div>
+            <div class="w3-half">
+              <p><label><i class="fa fa-clock-o "></i> Pickup Time</label></p>
+              <input class="w3-input w3-border" type="time" size=15 name=pickup_time placeholder="Pickup Time" required>
+            </div>
+            <p><label><i class="fa fa-user"></i> Passengers </label></p>
+            <input class="w3-input w3-border" type="number" value="1" name="passenger_count" min="1" max="5" required>
+            <p><button class="w3-button w3-dark-grey" type="submit" onclick="showPrediction();">Get Taxi Fare</button></p>
+          </form>
+      </div>
+    </div>
+
+    <!-- Instruction Tab-->
+    <div id="Instructions" class="w3-container w3-white w3-padding-16 myLink">
+      <h3>How much does a ride with NYC Taxi cost?</h3>
+      <p><span class="w3-tag w3-deep-orange">Welcome!</span> Plan your next trip with the NYC Taxi price estimator. Know before you go, so there is no math or surprises.</p>
+      <ul>
+        <li>Pickup Location and Destination should be valid addresses. If we are unable to geocode the addresses, you will be directed to an error page.</li>
+        <li>The maximum amount of passengers allowed in a yellow taxicab by law is 4 in a four passenger taxicab or 5 passengers in a five passenger taxicab.</li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<!-- Footer for w3.css template-->
+<footer class="w3-container w3-center w3-opacity w3-margin-bottom">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+// Tabs
+function openLink(evt, linkName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("myLink");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(linkName).style.display = "block";
+  evt.currentTarget.className += " w3-red";
+}
+
+// Click on the first tablink on load
+document.getElementsByClassName("tablink")[0].click();
+
+</script>
+
+</body>
+</html>
