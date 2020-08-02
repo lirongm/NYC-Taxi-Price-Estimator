@@ -15,10 +15,9 @@ Created by Lirong Ma, QA by Yanmeng (Selina) Song
 	*   [Run the pipeline ](#run-the-pipeline)  
 	* 	[Run unit tests ](#run-unit-tests)  
 - [Running the App](#running-the-app)  
-  * [Set up MySQL Credentials ](#set-up-mysql-credentials)  
   * [Build docker image](#build-docker-image-2)  
-  * [Run the app using RDS](#run-app-local-rds)  
-  * [Run the app using a local database](#run-app-local-db)  
+  * [Run the app using RDS](#run-the-app-using-rds)  
+  * [Run the app using a local database](#run-the-app-using-a-local-database)  
   
 <!-- tocstop -->  
   
