@@ -7,6 +7,6 @@ pandas==1.0.3
 pymysql==0.9.3
 scikit-learn==0.23.1
 geopy==1.22.0
-numpy==1.18.5
+numpy==1.22.0
 s3fs==0.4.2
 pytest==5.4.1
